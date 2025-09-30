@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 480">
+  <defs>
+    <linearGradient id="g4" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff9a9e" />
+      <stop offset="100%" stop-color="#fad0c4" />
+    </linearGradient>
+  </defs>
+  <rect width="360" height="480" rx="24" fill="url(#g4)" />
+  <text x="36" y="120" font-family="Manrope, Arial" font-size="34" fill="#1f2a44" font-weight="800">创客季刊</text>
+  <text x="36" y="170" font-family="Manrope, Arial" font-size="20" fill="#1f2a44" opacity="0.85">PiCircuit Magazine</text>
+  <text x="36" y="330" font-family="Manrope, Arial" font-size="18" fill="#1f2a44" opacity="0.85">趋势 · 案例 · 访谈</text>
+</svg>

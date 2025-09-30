@@ -1,0 +1,1369 @@
+<section class="site-wrapper" id="top">
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="#top">
+        <img src="{{ 'eelib-logo.svg' | asset_url }}" alt="{{ section.settings.brand_logo_alt | escape }}">
+        <div class="brand-copy">
+          <span class="brand-domain">{{ section.settings.brand_domain }}</span>
+          <span class="brand-company">{{ section.settings.brand_company }}</span>
+        </div>
+      </a>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="#ebooks">{{ section.settings.nav_ebooks_label }}</a>
+        <a href="#modules">{{ section.settings.nav_modules_label }}</a>
+        <a href="#magazine">{{ section.settings.nav_magazine_label }}</a>
+        <a href="#learning">{{ section.settings.nav_learning_label }}</a>
+        <a class="cta" href="#contact">{{ section.settings.nav_contact_label }}</a>
+      </nav>
+      <div class="header-actions">
+        <button class="cart-toggle" type="button" data-cart-toggle aria-label="打开购物车" aria-controls="cart-panel" aria-expanded="false">
+          <span>{{ section.settings.cart_label }}</span>
+          <span class="cart-count" data-cart-count>0</span>
+        </button>
+      </div>
+      <button class="nav-toggle" aria-label="展开导航" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <aside class="cart-panel" id="cart-panel" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="cart-heading">
+    <div class="cart-header">
+      <h2 id="cart-heading">{{ section.settings.cart_heading }}</h2>
+      <button type="button" class="cart-close" data-cart-close aria-label="关闭购物车">×</button>
+    </div>
+    <div class="cart-body">
+      <p class="cart-empty" data-cart-empty>{{ section.settings.cart_empty }}</p>
+      <ul class="cart-items" data-cart-items></ul>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">{{ section.settings.cart_total_label }} <span data-cart-total>¥0</span></div>
+      <button class="btn primary" type="button" data-checkout>{{ section.settings.checkout_label }}</button>
+    </div>
+  </aside>
+  <div class="cart-backdrop" data-cart-backdrop hidden></div>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow">{{ section.settings.hero_eyebrow }}</p>
+          <h1>{{ section.settings.hero_heading }}</h1>
+          <p class="lead">{{ section.settings.hero_subheading }}</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="{{ section.settings.hero_primary_link }}">{{ section.settings.hero_primary_label }}</a>
+            <a class="btn ghost" href="{{ section.settings.hero_secondary_link }}">{{ section.settings.hero_secondary_label }}</a>
+          </div>
+          {% assign hero_metrics = section.blocks | where: 'type', 'hero_metric' %}
+          {% if hero_metrics.size > 0 %}
+            <dl class="hero-metrics">
+              {% for block in hero_metrics %}
+                <div>
+                  <dt>{{ block.settings.metric_value }}</dt>
+                  <dd>{{ block.settings.metric_label }}</dd>
+                </div>
+              {% endfor %}
+            </dl>
+          {% endif %}
+        </div>
+        <div class="hero-showcase" aria-hidden="true">
+          {% assign hero_cards = section.blocks | where: 'type', 'hero_card' %}
+          {% for block in hero_cards %}
+            <article class="showcase-card">
+              {% if block.settings.badge != blank %}
+                <p class="badge">{{ block.settings.badge }}</p>
+              {% endif %}
+              <h3>{{ block.settings.title }}</h3>
+              <p>{{ block.settings.description }}</p>
+              {% if block.settings.link_label != blank %}
+                <a href="{{ block.settings.link_url }}" class="link">{{ block.settings.link_label }}</a>
+              {% endif %}
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="collections">
+      <div class="container">
+        <header class="section-header">
+          <p class="eyebrow">{{ section.settings.collections_eyebrow }}</p>
+          <h2>{{ section.settings.collections_heading }}</h2>
+          <p>{{ section.settings.collections_description }}</p>
+        </header>
+        {% assign collection_cards = section.blocks | where: 'type', 'collection_card' %}
+        {% if collection_cards.size > 0 %}
+          <div class="collection-grid">
+            {% for block in collection_cards %}
+              <article class="collection-card">
+                <h3>{{ block.settings.title }}</h3>
+                <p>{{ block.settings.description }}</p>
+                {% if block.settings.link_label != blank %}
+                  <a class="link" href="{{ block.settings.link_url }}">{{ block.settings.link_label }}</a>
+                {% endif %}
+              </article>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </section>
+
+    <section class="spotlight">
+      <div class="container spotlight-layout">
+        <div class="spotlight-copy">
+          <p class="eyebrow">{{ section.settings.spotlight_eyebrow }}</p>
+          <h2>{{ section.settings.spotlight_heading }}</h2>
+          <p>{{ section.settings.spotlight_description }}</p>
+          {% assign spotlight_items = section.blocks | where: 'type', 'spotlight_item' %}
+          {% if spotlight_items.size > 0 %}
+            <ul class="spotlight-list">
+              {% for block in spotlight_items %}
+                <li>{{ block.settings.text }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+          <div class="spotlight-actions">
+            <a class="btn primary" href="{{ section.settings.spotlight_primary_link }}">{{ section.settings.spotlight_primary_label }}</a>
+            <a class="btn ghost" href="{{ section.settings.spotlight_secondary_link }}">{{ section.settings.spotlight_secondary_label }}</a>
+          </div>
+        </div>
+        <div class="spotlight-cover" aria-hidden="true">
+          <span>{{ section.settings.spotlight_badge }}</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="ebook-market" id="ebooks">
+      <div class="container">
+        <header class="section-header">
+          <p class="eyebrow">{{ section.settings.ebooks_eyebrow }}</p>
+          <h2>{{ section.settings.ebooks_heading }}</h2>
+          <p>{{ section.settings.ebooks_description }}</p>
+        </header>
+        <div class="product-toolbar" role="search">
+          <label class="search-field">
+            <span class="sr-only">{{ section.settings.ebooks_search_label }}</span>
+            <input type="search" placeholder="{{ section.settings.ebooks_search_placeholder }}" data-product-search />
+          </label>
+          <div class="filter-chips" role="group" aria-label="{{ section.settings.ebooks_filter_label }}">
+            {% assign filter_chips = section.blocks | where: 'type', 'filter_chip' %}
+            {% for block in filter_chips %}
+              <button type="button" class="chip{% if forloop.first %} active{% endif %}" data-filter="{{ block.settings.filter_value }}">{{ block.settings.label }}</button>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="product-grid">
+          {% assign ebook_cards = section.blocks | where: 'type', 'ebook' %}
+          {% for block in ebook_cards %}
+            {% assign product = block.settings.product %}
+            {% assign product_title = block.settings.fallback_title %}
+            {% assign product_description = block.settings.fallback_description %}
+            {% assign product_price = block.settings.fallback_price %}
+            {% assign product_tags = block.settings.tags %}
+            {% assign product_type = block.settings.product_type %}
+            {% assign product_link = block.settings.link_url %}
+            {% assign data_price = block.settings.fallback_price | remove: '¥' | remove: '￥' | remove: ',' %}
+            {% assign featured_image = '' %}
+            {% if product %}
+              {% assign product_title = product.title %}
+              {% assign product_description = product.description | strip_html | truncate: 120 %}
+              {% assign product_price = product.price | money_without_trailing_zeros %}
+              {% assign data_price = product.price | divided_by: 100.0 %}
+              {% assign product_type = product.product_type | default: block.settings.product_type %}
+              {% assign product_link = product.url %}
+              {% if product.featured_image %}
+                {% assign featured_image = product.featured_image | image_url: width: 480 %}
+              {% endif %}
+            {% endif %}
+            {% if featured_image == '' and block.settings.fallback_image != blank %}
+              {% assign featured_image = block.settings.fallback_image | asset_url %}
+            {% endif %}
+            <article class="product-card" data-product-card data-tags="{{ product_tags }}" data-title="{{ product_title | escape }}">
+              {% if block.settings.badge != blank %}
+                <span class="badge">{{ block.settings.badge }}</span>
+              {% endif %}
+              {% if featured_image != '' %}
+                <img src="{{ featured_image }}" alt="{{ product_title | escape }}" loading="lazy">
+              {% endif %}
+              <h3>{{ product_title }}</h3>
+              <p>{{ product_description }}</p>
+              <div class="price">{{ product_price }}</div>
+              <button class="btn secondary" type="button" data-add-to-cart data-product="{{ product_title }}" data-price="{{ data_price }}" data-type="{{ product_type }}">{{ section.settings.add_to_cart_label }}</button>
+              {% if product_link != blank %}
+                <a class="link" href="{{ product_link }}">{{ block.settings.link_label }}</a>
+              {% endif %}
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="modules" id="modules">
+      <div class="container">
+        <header class="section-header">
+          <p class="eyebrow">{{ section.settings.modules_eyebrow }}</p>
+          <h2>{{ section.settings.modules_heading }}</h2>
+          <p>{{ section.settings.modules_description }}</p>
+        </header>
+        <div class="module-grid">
+          {% assign module_cards = section.blocks | where: 'type', 'module' %}
+          {% for block in module_cards %}
+            {% assign product = block.settings.product %}
+            {% assign product_title = block.settings.fallback_title %}
+            {% assign product_description = block.settings.fallback_description %}
+            {% assign product_price = block.settings.fallback_price %}
+            {% assign data_price = block.settings.fallback_price | remove: '¥' | remove: '￥' | remove: ',' %}
+            {% assign product_type = block.settings.product_type %}
+            {% if product %}
+              {% assign product_title = product.title %}
+              {% assign product_description = product.description | strip_html | truncate: 120 %}
+              {% assign product_price = product.price | money_without_trailing_zeros %}
+              {% assign data_price = product.price | divided_by: 100.0 %}
+              {% assign product_type = product.product_type | default: block.settings.product_type %}
+            {% endif %}
+            <article class="module-card">
+              <h3>{{ product_title }}</h3>
+              <p>{{ product_description }}</p>
+              <div class="price">{{ product_price }}</div>
+              <button class="btn secondary" type="button" data-add-to-cart data-product="{{ product_title }}" data-price="{{ data_price }}" data-type="{{ product_type }}">{{ section.settings.add_to_cart_label }}</button>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="magazine" id="magazine">
+      <div class="container magazine-layout">
+        <div class="magazine-copy">
+          <p class="eyebrow">{{ section.settings.magazine_eyebrow }}</p>
+          <h2>{{ section.settings.magazine_heading }}</h2>
+          <p>{{ section.settings.magazine_description }}</p>
+          <ul>
+            {% assign magazine_bullets = section.blocks | where: 'type', 'magazine_bullet' %}
+            {% for block in magazine_bullets %}
+              <li>{{ block.settings.text }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <form class="magazine-form" aria-label="{{ section.settings.magazine_form_label }}">
+          <label class="sr-only" for="magazine-email">{{ section.settings.magazine_email_label }}</label>
+          <input id="magazine-email" type="email" placeholder="{{ section.settings.magazine_email_placeholder }}" required />
+          <button class="btn primary" type="submit">{{ section.settings.magazine_submit_label }}</button>
+          <p class="form-helper">{{ section.settings.magazine_helper }}</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="learning" id="learning">
+      <div class="container learning-layout">
+        <div>
+          <header class="section-header">
+            <p class="eyebrow">{{ section.settings.learning_eyebrow }}</p>
+            <h2>{{ section.settings.learning_heading }}</h2>
+            <p>{{ section.settings.learning_description }}</p>
+          </header>
+          <div class="path-list">
+            {% assign learning_paths = section.blocks | where: 'type', 'learning_path' %}
+            {% for block in learning_paths %}
+              <article>
+                <h3>{{ block.settings.title }}</h3>
+                <p>{{ block.settings.description }}</p>
+              </article>
+            {% endfor %}
+          </div>
+        </div>
+        <aside class="learning-aside">
+          <h3>{{ section.settings.learning_aside_heading }}</h3>
+          <ul>
+            {% assign learning_resources = section.blocks | where: 'type', 'learning_resource' %}
+            {% for block in learning_resources %}
+              <li>{{ block.settings.text }}</li>
+            {% endfor %}
+          </ul>
+          <a class="btn ghost" href="{{ section.settings.learning_cta_link }}">{{ section.settings.learning_cta_label }}</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container testimonials-grid">
+        {% assign testimonials = section.blocks | where: 'type', 'testimonial' %}
+        {% for block in testimonials %}
+          <article>
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.quote }}</p>
+          </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-layout">
+        <div class="contact-copy">
+          <p class="eyebrow">{{ section.settings.contact_eyebrow }}</p>
+          <h2>{{ section.settings.contact_heading }}</h2>
+          <p>{{ section.settings.contact_description }}</p>
+          <ul>
+            {% assign contact_points = section.blocks | where: 'type', 'contact_point' %}
+            {% for block in contact_points %}
+              <li>{{ block.settings.text }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <form class="contact-form" aria-label="{{ section.settings.contact_form_label }}">
+          <label for="name">{{ section.settings.contact_name_label }}</label>
+          <input id="name" name="name" type="text" placeholder="{{ section.settings.contact_name_placeholder }}" required />
+          <label for="email">{{ section.settings.contact_email_label }}</label>
+          <input id="email" name="email" type="email" placeholder="{{ section.settings.contact_email_placeholder }}" required />
+          <label for="message">{{ section.settings.contact_message_label }}</label>
+          <textarea id="message" name="message" rows="4" placeholder="{{ section.settings.contact_message_placeholder }}"></textarea>
+          <button class="btn primary" type="submit">{{ section.settings.contact_submit_label }}</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-layout">
+      <div>
+        <a class="brand" href="#top">
+          <img src="{{ 'eelib-logo.svg' | asset_url }}" alt="{{ section.settings.brand_logo_alt | escape }}">
+          <div class="brand-copy">
+            <span class="brand-domain">{{ section.settings.brand_domain }}</span>
+            <span class="brand-company">{{ section.settings.brand_company }}</span>
+          </div>
+        </a>
+        <p>© <span id="year"></span> {{ section.settings.brand_company }}. {{ section.settings.footer_copy }}</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h3>{{ section.settings.footer_product_heading }}</h3>
+          <a href="#ebooks">{{ section.settings.nav_ebooks_label }}</a>
+          <a href="#modules">{{ section.settings.nav_modules_label }}</a>
+          <a href="#magazine">{{ section.settings.nav_magazine_label }}</a>
+        </div>
+        <div>
+          <h3>{{ section.settings.footer_resource_heading }}</h3>
+          <a href="#learning">{{ section.settings.nav_learning_label }}</a>
+          <a href="#contact">{{ section.settings.nav_contact_label }}</a>
+          <a href="{{ section.settings.footer_download_link }}">{{ section.settings.footer_download_label }}</a>
+        </div>
+        <div>
+          <h3>{{ section.settings.footer_support_heading }}</h3>
+          <a href="#contact">{{ section.settings.footer_support_contact }}</a>
+          <a href="{{ section.settings.footer_privacy_link }}">{{ section.settings.footer_privacy_label }}</a>
+          <a href="{{ section.settings.footer_terms_link }}">{{ section.settings.footer_terms_label }}</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</section>
+
+{% schema %}
+{
+  "name": "EELib 首页",
+  "settings": [
+    {
+      "type": "text",
+      "id": "brand_domain",
+      "label": "品牌域名",
+      "default": "www.eelib.io"
+    },
+    {
+      "type": "text",
+      "id": "brand_company",
+      "label": "公司名称",
+      "default": "Eetree LLC"
+    },
+    {
+      "type": "text",
+      "id": "brand_logo_alt",
+      "label": "Logo 替代文本",
+      "default": "EELib 标志"
+    },
+    {
+      "type": "text",
+      "id": "nav_ebooks_label",
+      "label": "导航 - 电子书",
+      "default": "电子书"
+    },
+    {
+      "type": "text",
+      "id": "nav_modules_label",
+      "label": "导航 - 功能模块",
+      "default": "功能模块"
+    },
+    {
+      "type": "text",
+      "id": "nav_magazine_label",
+      "label": "导航 - 刊物",
+      "default": "刊物"
+    },
+    {
+      "type": "text",
+      "id": "nav_learning_label",
+      "label": "导航 - 学习路径",
+      "default": "学习路径"
+    },
+    {
+      "type": "text",
+      "id": "nav_contact_label",
+      "label": "导航 - 商务联系",
+      "default": "商务联系"
+    },
+    {
+      "type": "text",
+      "id": "cart_label",
+      "label": "购物车按钮文案",
+      "default": "购物车"
+    },
+    {
+      "type": "text",
+      "id": "cart_heading",
+      "label": "购物车面板标题",
+      "default": "购物车"
+    },
+    {
+      "type": "text",
+      "id": "cart_empty",
+      "label": "购物车为空文案",
+      "default": "你的购物车还没有任何商品。"
+    },
+    {
+      "type": "text",
+      "id": "cart_total_label",
+      "label": "购物车合计标签",
+      "default": "合计"
+    },
+    {
+      "type": "text",
+      "id": "checkout_label",
+      "label": "结算按钮文案",
+      "default": "去结算"
+    },
+    {
+      "type": "text",
+      "id": "hero_eyebrow",
+      "label": "英雄区眉题",
+      "default": "Eetree LLC 出品 · Raspberry Pi 生态灵感"
+    },
+    {
+      "type": "text",
+      "id": "hero_heading",
+      "label": "英雄区标题",
+      "default": "在 EELib 下载图书、获取 KiCad 模块，让树莓派创意立即成形"
+    },
+    {
+      "type": "textarea",
+      "id": "hero_subheading",
+      "label": "英雄区副标题",
+      "default": "我们参考 Raspberry Pi Books & Magazines 的策划逻辑，整合中文版电子书、项目杂志与可复用的 KiCad 功能模块，帮助教育、创客与工程团队构建一站式研发库。"
+    },
+    {
+      "type": "text",
+      "id": "hero_primary_label",
+      "label": "英雄区主按钮文案",
+      "default": "探索电子书"
+    },
+    {
+      "type": "url",
+      "id": "hero_primary_link",
+      "label": "英雄区主按钮链接",
+      "default": "#ebooks"
+    },
+    {
+      "type": "text",
+      "id": "hero_secondary_label",
+      "label": "英雄区次按钮文案",
+      "default": "选购功能模块"
+    },
+    {
+      "type": "url",
+      "id": "hero_secondary_link",
+      "label": "英雄区次按钮链接",
+      "default": "#modules"
+    },
+    {
+      "type": "text",
+      "id": "collections_eyebrow",
+      "label": "精选区眉题",
+      "default": "主题精选"
+    },
+    {
+      "type": "text",
+      "id": "collections_heading",
+      "label": "精选区标题",
+      "default": "以 Raspberry Pi Books 栏目为灵感的知识与模块组合"
+    },
+    {
+      "type": "textarea",
+      "id": "collections_description",
+      "label": "精选区描述",
+      "default": "从入门教程到高级项目，我们将电子书、杂志与 KiCad 模块联动，形成适合课堂、创客空间与企业培训的完整方案。"
+    },
+    {
+      "type": "text",
+      "id": "spotlight_eyebrow",
+      "label": "焦点区眉题",
+      "default": "月度焦点"
+    },
+    {
+      "type": "text",
+      "id": "spotlight_heading",
+      "label": "焦点区标题",
+      "default": "《EELib Creator Journal》第 7 期上线"
+    },
+    {
+      "type": "textarea",
+      "id": "spotlight_description",
+      "label": "焦点区描述",
+      "default": "延续 Raspberry Pi 官方杂志的栏目结构，本期聚焦 AIoT 主题，附送 3 套与文章同步的 KiCad 模块工程文件。"
+    },
+    {
+      "type": "text",
+      "id": "spotlight_primary_label",
+      "label": "焦点区主按钮文案",
+      "default": "订阅杂志"
+    },
+    {
+      "type": "url",
+      "id": "spotlight_primary_link",
+      "label": "焦点区主按钮链接",
+      "default": "#magazine"
+    },
+    {
+      "type": "text",
+      "id": "spotlight_secondary_label",
+      "label": "焦点区次按钮文案",
+      "default": "批量采购"
+    },
+    {
+      "type": "url",
+      "id": "spotlight_secondary_link",
+      "label": "焦点区次按钮链接",
+      "default": "#contact"
+    },
+    {
+      "type": "text",
+      "id": "spotlight_badge",
+      "label": "焦点区徽标",
+      "default": "Issue 07"
+    },
+    {
+      "type": "text",
+      "id": "ebooks_eyebrow",
+      "label": "电子书区眉题",
+      "default": "电子书商店"
+    },
+    {
+      "type": "text",
+      "id": "ebooks_heading",
+      "label": "电子书区标题",
+      "default": "从基础到高级的树莓派电子书"
+    },
+    {
+      "type": "textarea",
+      "id": "ebooks_description",
+      "label": "电子书区描述",
+      "default": "所有电子书均包含可下载资源、示例代码和 KiCad 模块，满足 Raspberry Pi Books & Magazines 风格的内容深度。"
+    },
+    {
+      "type": "text",
+      "id": "ebooks_search_label",
+      "label": "电子书搜索标签",
+      "default": "搜索电子书"
+    },
+    {
+      "type": "text",
+      "id": "ebooks_search_placeholder",
+      "label": "电子书搜索占位文本",
+      "default": "搜索主题、关键字或模块"
+    },
+    {
+      "type": "text",
+      "id": "ebooks_filter_label",
+      "label": "电子书筛选区域标签",
+      "default": "电子书分类筛选"
+    },
+    {
+      "type": "text",
+      "id": "add_to_cart_label",
+      "label": "加入购物车按钮文案",
+      "default": "加入购物车"
+    },
+    {
+      "type": "text",
+      "id": "modules_eyebrow",
+      "label": "模块区眉题",
+      "default": "KiCad 功能模块"
+    },
+    {
+      "type": "text",
+      "id": "modules_heading",
+      "label": "模块区标题",
+      "default": "直接导入项目的模块与参考设计"
+    },
+    {
+      "type": "textarea",
+      "id": "modules_description",
+      "label": "模块区描述",
+      "default": "模块数据表、KiCad 工程与焊接指南一应俱全，便于与你的电子书学习路径打通。"
+    },
+    {
+      "type": "text",
+      "id": "magazine_eyebrow",
+      "label": "杂志区眉题",
+      "default": "刊物订阅"
+    },
+    {
+      "type": "text",
+      "id": "magazine_heading",
+      "label": "杂志区标题",
+      "default": "延续 Raspberry Pi 官方杂志的栏目体验"
+    },
+    {
+      "type": "textarea",
+      "id": "magazine_description",
+      "label": "杂志区描述",
+      "default": "每月发布《EELib Creator Journal》，覆盖项目访谈、课堂案例、模块拆解与代码范例。"
+    },
+    {
+      "type": "text",
+      "id": "magazine_form_label",
+      "label": "杂志表单无障碍标签",
+      "default": "订阅 EELib 杂志"
+    },
+    {
+      "type": "text",
+      "id": "magazine_email_label",
+      "label": "杂志邮箱字段标签",
+      "default": "订阅邮箱"
+    },
+    {
+      "type": "text",
+      "id": "magazine_email_placeholder",
+      "label": "杂志邮箱占位文本",
+      "default": "填写邮箱，接收最新刊物"
+    },
+    {
+      "type": "text",
+      "id": "magazine_submit_label",
+      "label": "杂志表单按钮文案",
+      "default": "立即订阅"
+    },
+    {
+      "type": "text",
+      "id": "magazine_helper",
+      "label": "杂志表单辅助文案",
+      "default": "订阅后将收到样刊与 KiCad 模块预览。"
+    },
+    {
+      "type": "text",
+      "id": "learning_eyebrow",
+      "label": "学习路径眉题",
+      "default": "学习路径"
+    },
+    {
+      "type": "text",
+      "id": "learning_heading",
+      "label": "学习路径标题",
+      "default": "以成果为导向的项目学习线路"
+    },
+    {
+      "type": "textarea",
+      "id": "learning_description",
+      "label": "学习路径描述",
+      "default": "EELib 借鉴 Raspberry Pi Books 的栏目分类，将电子书章节与模块装配组合成 3 条学习路径，帮助团队快速上手。"
+    },
+    {
+      "type": "text",
+      "id": "learning_aside_heading",
+      "label": "学习路径侧栏标题",
+      "default": "配套资源"
+    },
+    {
+      "type": "text",
+      "id": "learning_cta_label",
+      "label": "学习路径侧栏按钮文案",
+      "default": "预约顾问"
+    },
+    {
+      "type": "url",
+      "id": "learning_cta_link",
+      "label": "学习路径侧栏按钮链接",
+      "default": "#contact"
+    },
+    {
+      "type": "text",
+      "id": "contact_eyebrow",
+      "label": "联系区眉题",
+      "default": "商务与技术支持"
+    },
+    {
+      "type": "text",
+      "id": "contact_heading",
+      "label": "联系区标题",
+      "default": "需要定制课程或模块？与 Eetree LLC 团队联系"
+    },
+    {
+      "type": "textarea",
+      "id": "contact_description",
+      "label": "联系区描述",
+      "default": "填写表单告诉我们你的应用场景，我们将在 2 个工作日内提供解决方案与报价。"
+    },
+    {
+      "type": "text",
+      "id": "contact_form_label",
+      "label": "联系表单无障碍标签",
+      "default": "联系 EELib 团队"
+    },
+    {
+      "type": "text",
+      "id": "contact_name_label",
+      "label": "姓名字段标签",
+      "default": "姓名"
+    },
+    {
+      "type": "text",
+      "id": "contact_name_placeholder",
+      "label": "姓名字段占位",
+      "default": "你的姓名"
+    },
+    {
+      "type": "text",
+      "id": "contact_email_label",
+      "label": "邮箱字段标签",
+      "default": "邮箱"
+    },
+    {
+      "type": "text",
+      "id": "contact_email_placeholder",
+      "label": "邮箱字段占位",
+      "default": "company@example.com"
+    },
+    {
+      "type": "text",
+      "id": "contact_message_label",
+      "label": "需求描述标签",
+      "default": "需求描述"
+    },
+    {
+      "type": "text",
+      "id": "contact_message_placeholder",
+      "label": "需求描述占位",
+      "default": "告诉我们你的项目背景、数量或时间安排"
+    },
+    {
+      "type": "text",
+      "id": "contact_submit_label",
+      "label": "联系表单按钮文案",
+      "default": "提交需求"
+    },
+    {
+      "type": "textarea",
+      "id": "footer_copy",
+      "label": "页脚版权描述",
+      "default": "版权所有。灵感来源于 Raspberry Pi Books & Magazines，面向全球创客与教育团队。"
+    },
+    {
+      "type": "text",
+      "id": "footer_product_heading",
+      "label": "页脚产品栏目标题",
+      "default": "产品"
+    },
+    {
+      "type": "text",
+      "id": "footer_resource_heading",
+      "label": "页脚资源栏目标题",
+      "default": "资源"
+    },
+    {
+      "type": "text",
+      "id": "footer_download_label",
+      "label": "页脚下载链接文案",
+      "default": "下载中心"
+    },
+    {
+      "type": "url",
+      "id": "footer_download_link",
+      "label": "页脚下载链接",
+      "default": "#"
+    },
+    {
+      "type": "text",
+      "id": "footer_support_heading",
+      "label": "页脚支持栏目标题",
+      "default": "支持"
+    },
+    {
+      "type": "text",
+      "id": "footer_support_contact",
+      "label": "页脚支持联系方式",
+      "default": "技术支持"
+    },
+    {
+      "type": "text",
+      "id": "footer_privacy_label",
+      "label": "页脚隐私政策文案",
+      "default": "隐私政策"
+    },
+    {
+      "type": "url",
+      "id": "footer_privacy_link",
+      "label": "页脚隐私政策链接",
+      "default": "#"
+    },
+    {
+      "type": "text",
+      "id": "footer_terms_label",
+      "label": "页脚条款文案",
+      "default": "条款与条件"
+    },
+    {
+      "type": "url",
+      "id": "footer_terms_link",
+      "label": "页脚条款链接",
+      "default": "#"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "hero_metric",
+      "name": "英雄区指标",
+      "settings": [
+        {
+          "type": "text",
+          "id": "metric_value",
+          "label": "指标数值",
+          "default": "80+"
+        },
+        {
+          "type": "text",
+          "id": "metric_label",
+          "label": "指标标签",
+          "default": "树莓派主题电子书与期刊"
+        }
+      ]
+    },
+    {
+      "type": "hero_card",
+      "name": "英雄区展示卡片",
+      "settings": [
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "徽标",
+          "default": "最新发布"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "标题",
+          "default": "《树莓派边缘 AI 设计指南 2024》"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "描述",
+          "default": "覆盖视觉识别、语音推理与边缘部署，附赠 6 套可直接导入 KiCad 的功能模块。"
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "链接文案",
+          "default": "阅读简介 →"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "链接地址",
+          "default": "#ebooks"
+        }
+      ]
+    },
+    {
+      "type": "collection_card",
+      "name": "精选区卡片",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "标题",
+          "default": "课堂实验室"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "描述",
+          "default": "项目式教学电子书、课堂讲义与传感器扩展板，适合中学与高校课程。"
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "链接文案",
+          "default": "获取教学路线 →"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "链接地址",
+          "default": "#learning"
+        }
+      ]
+    },
+    {
+      "type": "spotlight_item",
+      "name": "焦点区要点",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "内容",
+          "default": "深度访谈：教育场景中的树莓派部署经验"
+        }
+      ]
+    },
+    {
+      "type": "filter_chip",
+      "name": "电子书筛选标签",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "标签文案",
+          "default": "全部"
+        },
+        {
+          "type": "text",
+          "id": "filter_value",
+          "label": "筛选值",
+          "default": "all"
+        }
+      ]
+    },
+    {
+      "type": "ebook",
+      "name": "电子书卡片",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "关联产品"
+        },
+        {
+          "type": "text",
+          "id": "fallback_title",
+          "label": "默认标题",
+          "default": "树莓派边缘 AI 设计指南 2024"
+        },
+        {
+          "type": "textarea",
+          "id": "fallback_description",
+          "label": "默认描述",
+          "default": "64 页 PDF，含 TensorFlow Lite 优化、OpenCV 实例与配套 KiCad 模块。"
+        },
+        {
+          "type": "text",
+          "id": "fallback_price",
+          "label": "默认价格",
+          "default": "¥89"
+        },
+        {
+          "type": "text",
+          "id": "product_type",
+          "label": "产品类型",
+          "default": "电子书"
+        },
+        {
+          "type": "text",
+          "id": "tags",
+          "label": "筛选标签（逗号分隔）",
+          "default": "ai"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "徽标",
+          "default": "新品"
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "链接文案",
+          "default": "试读章节 →"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "链接地址",
+          "default": "#"
+        },
+        {
+          "type": "text",
+          "id": "fallback_image",
+          "label": "默认图片文件名",
+          "default": "ebook-edge-ai.svg",
+          "info": "填写 assets 目录中的图片文件名，例如 ebook-edge-ai.svg"
+        }
+      ]
+    },
+    {
+      "type": "module",
+      "name": "功能模块卡片",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "关联产品"
+        },
+        {
+          "type": "text",
+          "id": "fallback_title",
+          "label": "默认标题",
+          "default": "CM4 工业扩展套件"
+        },
+        {
+          "type": "textarea",
+          "id": "fallback_description",
+          "label": "默认描述",
+          "default": "支持 PoE、RS-485 与隔离电源，含完整 BOM 与测试脚本。"
+        },
+        {
+          "type": "text",
+          "id": "fallback_price",
+          "label": "默认价格",
+          "default": "¥469"
+        },
+        {
+          "type": "text",
+          "id": "product_type",
+          "label": "产品类型",
+          "default": "模块"
+        }
+      ]
+    },
+    {
+      "type": "magazine_bullet",
+      "name": "杂志卖点",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "内容",
+          "default": "双语内容，便于课堂及海外团队使用"
+        }
+      ]
+    },
+    {
+      "type": "learning_path",
+      "name": "学习路径",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "标题",
+          "default": "入门加速"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "描述",
+          "default": "4 周掌握树莓派基础，完成智能家居与数据采集实战。"
+        }
+      ]
+    },
+    {
+      "type": "learning_resource",
+      "name": "学习资源",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "内容",
+          "default": "KiCad 原理图库与 PCB 封装库"
+        }
+      ]
+    },
+    {
+      "type": "testimonial",
+      "name": "客户评价",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "标题",
+          "default": "上海创客工坊"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "评价内容",
+          "default": "“通过 EELib，我们在 6 周内完成了由 KiCad 模块驱动的互动展品，从设计到布展全程无缝衔接。”"
+        }
+      ]
+    },
+    {
+      "type": "contact_point",
+      "name": "联系要点",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "内容",
+          "default": "教育培训、企业采购、创客空间合作"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "EELib 首页",
+      "blocks": [
+        {
+          "type": "hero_metric"
+        },
+        {
+          "type": "hero_metric",
+          "settings": {
+            "metric_value": "40+",
+            "metric_label": "KiCad 模块与可复用原理图库"
+          }
+        },
+        {
+          "type": "hero_metric",
+          "settings": {
+            "metric_value": "12 次/年",
+            "metric_label": "刊物与教学案例月度更新"
+          }
+        },
+        {
+          "type": "hero_card"
+        },
+        {
+          "type": "hero_card",
+          "settings": {
+            "badge": "模块热销",
+            "title": "CM4 工业扩展套件",
+            "description": "即插即用的隔离电源、双网口与工业通讯接口，配套教程与示例项目。",
+            "link_label": "查看模块 →",
+            "link_url": "#modules"
+          }
+        },
+        {
+          "type": "collection_card"
+        },
+        {
+          "type": "collection_card",
+          "settings": {
+            "title": "创客与艺术",
+            "description": "交互装置、光影艺术与音频合成模块，提供设计灵感与代码示例。",
+            "link_label": "浏览模块 →",
+            "link_url": "#modules"
+          }
+        },
+        {
+          "type": "collection_card",
+          "settings": {
+            "title": "工业物联网",
+            "description": "工业协议电子书配合 CM4 接口板、边缘监测参考设计，加速工业部署。",
+            "link_label": "查看内容 →",
+            "link_url": "#ebooks"
+          }
+        },
+        {
+          "type": "spotlight_item"
+        },
+        {
+          "type": "spotlight_item",
+          "settings": {
+            "text": "工程师专栏：CM4 冗余电源设计详解"
+          }
+        },
+        {
+          "type": "spotlight_item",
+          "settings": {
+            "text": "动手实验：视觉巡线机器人全流程"
+          }
+        },
+        {
+          "type": "filter_chip"
+        },
+        {
+          "type": "filter_chip",
+          "settings": {
+            "label": "AI 与视觉",
+            "filter_value": "ai"
+          }
+        },
+        {
+          "type": "filter_chip",
+          "settings": {
+            "label": "物联网",
+            "filter_value": "iot"
+          }
+        },
+        {
+          "type": "filter_chip",
+          "settings": {
+            "label": "教育教学",
+            "filter_value": "education"
+          }
+        },
+        {
+          "type": "ebook"
+        },
+        {
+          "type": "ebook",
+          "settings": {
+            "fallback_title": "树莓派工业物联网实战",
+            "fallback_description": "详解 SCADA 集成、工业协议栈与冗余系统设计，附 CM4 工控板参考工程。",
+            "fallback_price": "¥109",
+            "product_type": "电子书",
+            "tags": "iot",
+            "badge": "",
+            "link_label": "下载样章 →",
+            "fallback_image": "ebook-iot.svg"
+          }
+        },
+        {
+          "type": "ebook",
+          "settings": {
+            "fallback_title": "树莓派创客课堂 30 课",
+            "fallback_description": "项目式教学方案，配套课程幻灯片、打分表以及可直接打印的实验卡片。",
+            "fallback_price": "¥79",
+            "product_type": "电子书",
+            "tags": "education",
+            "badge": "",
+            "link_label": "查看课程大纲 →",
+            "fallback_image": "ebook-education.svg"
+          }
+        },
+        {
+          "type": "ebook",
+          "settings": {
+            "fallback_title": "EELib Creator Journal 第 7 期",
+            "fallback_description": "延续官方杂志栏目，包含创客项目访谈、教育案例与专题模块拆解。",
+            "fallback_price": "¥39",
+            "product_type": "杂志",
+            "tags": "education,magazine",
+            "badge": "",
+            "link_label": "浏览目录 →",
+            "fallback_image": "magazine-maker.svg"
+          }
+        },
+        {
+          "type": "module"
+        },
+        {
+          "type": "module",
+          "settings": {
+            "fallback_title": "Edge TPU 视觉识别板",
+            "fallback_description": "专为树莓派摄像头打造的 AI 加速模块，随附案例代码与 3D 外壳。",
+            "fallback_price": "¥529"
+          }
+        },
+        {
+          "type": "module",
+          "settings": {
+            "fallback_title": "教育传感器套装",
+            "fallback_description": "10 种常用传感器与扩展底板，附课堂实验手册与打分模板。",
+            "fallback_price": "¥249"
+          }
+        },
+        {
+          "type": "module",
+          "settings": {
+            "fallback_title": "工业边缘监测板",
+            "fallback_description": "面向 IIoT 的多路模拟量采集与报警设计，提供三种安装方式。",
+            "fallback_price": "¥389"
+          }
+        },
+        {
+          "type": "magazine_bullet"
+        },
+        {
+          "type": "magazine_bullet",
+          "settings": {
+            "text": "含电子书增刊与 KiCad 文件更新"
+          }
+        },
+        {
+          "type": "magazine_bullet",
+          "settings": {
+            "text": "支持企业、学校的站点订阅授权"
+          }
+        },
+        {
+          "type": "learning_path"
+        },
+        {
+          "type": "learning_path",
+          "settings": {
+            "title": "教育课堂",
+            "description": "12 课的课堂方案，包括作业模板、课堂测验与学生项目指南。"
+          }
+        },
+        {
+          "type": "learning_path",
+          "settings": {
+            "title": "工业部署",
+            "description": "聚焦 CM4 与边缘分析，覆盖冗余系统、远程运维与安全策略。"
+          }
+        },
+        {
+          "type": "learning_resource"
+        },
+        {
+          "type": "learning_resource",
+          "settings": {
+            "text": "Python、Node-RED 与 Grafana 示例"
+          }
+        },
+        {
+          "type": "learning_resource",
+          "settings": {
+            "text": "教学评估、采购清单与预算模板"
+          }
+        },
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "title": "南京理工大学工程学院",
+            "quote": "“EELib 的课程电子书与实验套件帮助我们构建新的嵌入式项目课程，学生满意度显著提升。”"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "title": "深圳 IIoT 创新中心",
+            "quote": "“模块数据和工业案例贴近生产现场，大幅缩短了我们团队的研发验证周期。”"
+          }
+        },
+        {
+          "type": "contact_point"
+        },
+        {
+          "type": "contact_point",
+          "settings": {
+            "text": "OEM 模块定制与 KiCad 工程咨询"
+          }
+        },
+        {
+          "type": "contact_point",
+          "settings": {
+            "text": "电子书授权与多语言本地化"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

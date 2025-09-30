@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 480">
+  <defs>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#30cfd0" />
+      <stop offset="100%" stop-color="#330867" />
+    </linearGradient>
+  </defs>
+  <rect width="360" height="480" rx="24" fill="url(#g3)" />
+  <text x="36" y="120" font-family="Manrope, Arial" font-size="34" fill="white" font-weight="700">Maker Class</text>
+  <text x="36" y="170" font-family="Manrope, Arial" font-size="22" fill="white" opacity="0.85">创客课堂</text>
+  <text x="36" y="330" font-family="Manrope, Arial" font-size="18" fill="white" opacity="0.75">30 节项目式课程</text>
+</svg>
