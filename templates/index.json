@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "main": {
+      "type": "homepage",
+      "settings": {
+        "hero_heading": "EELib 创客工作室",
+        "hero_subheading": "借鉴 Raspberry Pi 社区的创客精神，我们提供精选电子书与 KiCad 模块，加速你的开源硬件之旅。",
+        "hero_cta_label": "探索全部资源",
+        "hero_cta_link": "#ebooks"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

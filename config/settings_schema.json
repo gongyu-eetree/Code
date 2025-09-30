@@ -1,0 +1,39 @@
+[
+  {
+    "name": "主题设置",
+    "settings": [
+      {
+        "type": "header",
+        "content": "品牌色"
+      },
+      {
+        "type": "color",
+        "id": "accent_color",
+        "label": "主色调",
+        "default": "#12a594"
+      },
+      {
+        "type": "color",
+        "id": "accent_dark_color",
+        "label": "深色调",
+        "default": "#0b525b"
+      },
+      {
+        "type": "header",
+        "content": "社交媒体"
+      },
+      {
+        "type": "text",
+        "id": "social_wechat",
+        "label": "微信或钉钉二维码链接",
+        "default": ""
+      },
+      {
+        "type": "url",
+        "id": "social_github",
+        "label": "GitHub 链接",
+        "default": "https://github.com/Eetree"
+      }
+    ]
+  }
+]

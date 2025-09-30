@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 160" role="img" aria-labelledby="title desc">
+  <title id="title">EELib Logo</title>
+  <desc id="desc">An outlined book with an ascending analytics line inside.</desc>
+  <defs>
+    <style>
+      .stroke { stroke: #0b5c5a; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+      .fill { fill: none; }
+    </style>
+  </defs>
+  <path class="stroke fill" d="M18 34a10 10 0 0 1 10-10h40c12 0 18 6 18 18v92c-6-6-12-8-20-8H28a10 10 0 0 1-10-10z" />
+  <path class="stroke fill" d="M126 34a10 10 0 0 0-10-10H76c-12 0-18 6-18 18v92c6-6 12-8 20-8h38a10 10 0 0 0 10-10z" />
+  <path class="stroke fill" d="M40 82l14-14 14 18 18-24 18 14" />
+</svg>
