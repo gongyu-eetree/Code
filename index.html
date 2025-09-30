@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stepico MicroPython IDE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.65.16/lib/codemirror.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.65.16/theme/material-darker.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Stepico MicroPython IDE</h1>
+    <div class="board-selector">
+      <label for="board">目标设备:</label>
+      <select id="board">
+        <option value="pico">Stepico / Raspberry Pi Pico</option>
+        <option value="console">Stepico Game Console</option>
+        <option value="debugger">12指神探调试工具</option>
+      </select>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="editor-pane">
+      <div class="editor-toolbar">
+        <button id="connect" class="primary">连接</button>
+        <button id="disconnect" disabled>断开</button>
+        <button id="run" disabled>运行 (Ctrl+R)</button>
+        <button id="stop" disabled>中断 (Ctrl+C)</button>
+        <button id="upload" disabled>保存为 main.py</button>
+        <button id="download">导出脚本</button>
+        <span class="status" id="status">未连接</span>
+      </div>
+      <textarea id="editor"></textarea>
+    </section>
+
+    <section class="terminal-pane">
+      <header>
+        <h2>终端</h2>
+      </header>
+      <div id="terminal"></div>
+      <form id="repl-form">
+        <input type="text" id="repl-input" placeholder=">>>" autocomplete="off" disabled />
+        <button type="submit" disabled>发送</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>通过 USB 与 Stepico 系列设备通信，兼容 Thonny 常用操作。</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5.65.16/lib/codemirror.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5.65.16/mode/python/python.min.js"></script>
+  <script src="app.js" type="module"></script>
+</body>
+</html>
