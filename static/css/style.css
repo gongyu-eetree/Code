@@ -1,0 +1,16 @@
+body {
+  font-family: "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
+}
+
+#editor {
+  min-height: 60vh;
+  font-family: "JetBrains Mono", "Fira Code", Consolas, "Courier New", monospace;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  white-space: pre;
+}
+
+#preview-frame {
+  border: 0;
+  background-color: #fff;
+}
