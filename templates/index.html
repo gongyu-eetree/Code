@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}上传 HTML 文件 - HTML Editor{% endblock %}
+
+{% block content %}
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h1 class="h4 mb-4">上传 HTML 文件进行编辑</h1>
+          <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data" class="mb-4">
+            <div class="input-group">
+              <input class="form-control" type="file" name="file" accept=".html,.htm" required>
+              <button class="btn btn-primary" type="submit">上传并编辑</button>
+            </div>
+          </form>
+          {% if files %}
+            <h2 class="h5">已上传的文件</h2>
+            <ul class="list-group">
+              {% for file in files %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <span>{{ file }}</span>
+                  <a class="btn btn-outline-primary btn-sm" href="{{ url_for('edit', filename=file) }}">继续编辑</a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <p class="text-muted mb-0">还没有上传的 HTML 文件。</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
