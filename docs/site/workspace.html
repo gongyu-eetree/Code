@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>在线 IDE - PicoStudio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="navbar-inner">
+        <a class="brand" href="index.html">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="12" width="56" height="40" rx="12" fill="url(#paint0_linear)" />
+            <path d="M20 26h6l3 6 3-6h6l-6 12h-6l-6-12z" fill="white" />
+            <defs>
+              <linearGradient id="paint0_linear" x1="10" y1="8" x2="54" y2="56" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#3B82F6" />
+                <stop offset="1" stop-color="#2563EB" />
+              </linearGradient>
+            </defs>
+          </svg>
+          PicoStudio
+        </a>
+        <nav class="nav-links">
+          <a href="index.html">平台首页</a>
+          <a class="active" href="workspace.html">在线 IDE</a>
+          <a href="modules.html">扩展与模块</a>
+          <a href="roadmap.html">路线图</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="hero">
+        <div>
+          <div class="badge">IDE 工作区总览</div>
+          <h1>浏览器内完成项目从原型到部署</h1>
+          <p>
+            结合代码编辑、图形化编程、设备状态与调试工具，一页实现 Thonny 级体验，配合 AI 提升效率。
+          </p>
+          <div class="cta">
+            <a class="button primary" href="#editor">了解编辑器</a>
+            <a class="button secondary" href="#assistant">认识 AI 助手</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <span class="status">工作区布局 · 3 面板</span>
+          <pre><code>┌───────────────┬──────────────────────────────┐
+│ 资源管理器      │ editor.py                     │
+│ ───────────── │ ---------------------------- │
+│ main.py        │ from pico import board       │
+│ modules/       │                              │
+│ assets/        │ def blink():                 │
+│ examples/      │     led.toggle()             │
+│                │                              │
+│ 串口终端        │ >>> AI 建议:                 │
+│ 调试控制台      │ • 添加错误处理               │
+└───────────────┴──────────────────────────────┘</code></pre>
+        </div>
+      </section>
+
+      <section id="editor">
+        <h2 class="section-title">核心区域</h2>
+        <div class="grid">
+          <article class="card">
+            <div class="icon-circle">📝</div>
+            <h3>代码编辑器</h3>
+            <p>
+              支持语法高亮、自动补全、智能缩进与实时语法检查。兼容 Thonny 快捷键与多文件标签页。
+            </p>
+          </article>
+          <article class="card">
+            <div class="icon-circle">🧱</div>
+            <h3>图形化工作区</h3>
+            <p>Blockly/Scratch 风格，积木可查看生成的 MicroPython 代码；支持课堂模板与版本回溯。</p>
+          </article>
+          <article class="card">
+            <div class="icon-circle">📁</div>
+            <h3>项目资源管理器</h3>
+            <p>展示本地与设备文件系统，支持拖拽上传、批量下载、云端同步与固件选择。</p>
+          </article>
+          <article class="card">
+            <div class="icon-circle">🖥️</div>
+            <h3>设备仪表板</h3>
+            <p>实时显示电压、温度、运行状态与串口日志，支持多板卡并行连接和切换。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="assistant">
+        <h2 class="section-title">AI 助手面板</h2>
+        <div class="feature-columns">
+          <div>
+            <h3>三大核心能力</h3>
+            <ul>
+              <li>
+                <div class="icon-circle">✅</div>
+                <div>
+                  <strong>语法与风格检查：</strong>实时检测错误、统一缩进与命名风格，输出修复建议。
+                </div>
+              </li>
+              <li>
+                <div class="icon-circle">🚀</div>
+                <div>
+                  <strong>性能优化：</strong>识别阻塞代码、内存热点与电源消耗点，给出优化补丁。
+                </div>
+              </li>
+              <li>
+                <div class="icon-circle">📝</div>
+                <div>
+                  <strong>自动注释与文档：</strong>根据函数意图生成中英文注释、README 与教学讲义草稿。
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3>生成式模块向导</h3>
+            <p>AI 可根据硬件选择生成驱动模块，自动创建项目结构、示例与测试脚本。</p>
+            <div class="card">
+              <h3>AI 生成工作流</h3>
+              <ol>
+                <li>选择硬件型号与外设（如 IMU、LCD、音频）。</li>
+                <li>补充需求（功能、性能目标、教学难度）。</li>
+                <li>AI 输出模块代码、示例与实验指导。</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">课堂模式</h2>
+        <div class="grid">
+          <article class="card">
+            <div class="icon-circle">👩‍🏫</div>
+            <h3>教师控制台</h3>
+            <p>批量推送示例、限制命令、查看实时代码片段并点评。</p>
+          </article>
+          <article class="card">
+            <div class="icon-circle">👥</div>
+            <h3>学生进度板</h3>
+            <p>可视化学生在线状态、练习完成度与评语记录。</p>
+          </article>
+          <article class="card">
+            <div class="icon-circle">📂</div>
+            <h3>作业与作品集</h3>
+            <p>支持提交、版本对比、AI 自动批改与导出证书。</p>
+          </article>
+        </div>
+      </section>
+
+      <footer>
+        <span>© 2024 PicoStudio. All rights reserved.</span>
+        <div class="toggle-theme">
+          <button class="active" type="button">浅色</button>
+          <button type="button">深色</button>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      const lightBtn = document.querySelector('.toggle-theme button:first-child');
+      const darkBtn = document.querySelector('.toggle-theme button:last-child');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (prefersDark) {
+        document.body.classList.add('dark');
+        lightBtn.classList.remove('active');
+        darkBtn.classList.add('active');
+      }
+      lightBtn.addEventListener('click', () => {
+        document.body.classList.remove('dark');
+        lightBtn.classList.add('active');
+        darkBtn.classList.remove('active');
+      });
+      darkBtn.addEventListener('click', () => {
+        document.body.classList.add('dark');
+        darkBtn.classList.add('active');
+        lightBtn.classList.remove('active');
+      });
+    </script>
+  </body>
+</html>
