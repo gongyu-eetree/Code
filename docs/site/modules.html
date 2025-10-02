@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>扩展与模块 - PicoStudio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="navbar-inner">
+        <a class="brand" href="index.html">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="12" width="56" height="40" rx="12" fill="url(#paint0_linear)" />
+            <path d="M20 26h6l3 6 3-6h6l-6 12h-6l-6-12z" fill="white" />
+            <defs>
+              <linearGradient id="paint0_linear" x1="10" y1="8" x2="54" y2="56" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#3B82F6" />
+                <stop offset="1" stop-color="#2563EB" />
+              </linearGradient>
+            </defs>
+          </svg>
+          PicoStudio
+        </a>
+        <nav class="nav-links">
+          <a href="index.html">平台首页</a>
+          <a href="workspace.html">在线 IDE</a>
+          <a class="active" href="modules.html">扩展与模块</a>
+          <a href="roadmap.html">路线图</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="hero">
+        <div>
+          <div class="badge">模块生态</div>
+          <h1>覆盖教学、创客、竞赛的模块库</h1>
+          <p>
+            PicoStudio 提供官方与社区维护的驱动、示例、课程与 AI 生成模块，让 RP2040 / RP2350 项目快速落地。
+          </p>
+        </div>
+        <div class="hero-visual">
+          <span class="status">模块概览</span>
+          <pre><code>• 官方模块：传感器、显示、音频、无线
+• AI 生成：按需求定制项目脚手架
+• 教学资源：课程包、实验指导、课后作业
+• 社区精选：竞赛作品、创客项目、插件</code></pre>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">官方模块</h2>
+        <div class="grid">
+          <article class="card">
+            <div class="icon-circle">🌡️</div>
+            <h3>传感器套件</h3>
+            <p>DHT、BME280、光照、IMU、超声波测距，提供统一 API 与调试仪表板。</p>
+          </article>
+          <article class="card">
+            <div class="icon-circle">🖼️</div>
+            <h3>显示与交互</h3>
+            <p>支持 LCD、OLED、E-Ink 与电容触控，内置 UI 组件库与布局模板。</p>
+          </article>
+          <article class="card">
+            <div class="icon-circle">🔊</div>
+            <h3>音频与多媒体</h3>
+            <p>提供音效播放器、MIDI 接口、语音合成与声波可视化工具。</p>
+          </article>
+          <article class="card">
+            <div class="icon-circle">📡</div>
+            <h3>无线通信</h3>
+            <p>Wi-Fi、蓝牙、LoRa 与 Zigbee 适配，支持联机调试与 OTA 更新。</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">AI 生成模块范例</h2>
+        <div class="feature-columns">
+          <div>
+            <h3>课程模板</h3>
+            <p>AI 根据教学目标输出 PPT、大纲、实验指导与考核题库。</p>
+            <div class="card">
+              <h3>智能小车课程</h3>
+              <ul>
+                <li>步骤教学：组装、校准、避障、跟随。</li>
+                <li>扩展实验：蓝牙遥控、AI 语音指令。</li>
+                <li>评估方式：在线测验 + AI 自动批改。</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h3>创客项目</h3>
+            <p>输入项目关键词，AI 自动生成 BOM、接线图、MicroPython 代码与调试提示。</p>
+            <div class="card">
+              <h3>AI 生成：智能温室</h3>
+              <ol>
+                <li>自动控制：风扇、加热与补光。</li>
+                <li>云端监控：Grafana 仪表板 + 微信通知。</li>
+                <li>低功耗策略：定时唤醒与阈值触发。</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">社区精选</h2>
+        <div class="grid">
+          <article class="card">
+            <div class="icon-circle">🎮</div>
+            <h3>RP2040 游戏 Jam</h3>
+            <p>游戏模板、像素美术包、音效库与排行榜工具，适配 RP2040 游戏机。</p>
+          </article>
+          <article class="card">
+            <div class="icon-circle">🏆</div>
+            <h3>竞赛模式</h3>
+            <p>支持项目打包提交、评委评语、AI 初审与公开展示。</p>
+          </article>
+          <article class="card">
+            <div class="icon-circle">🔌</div>
+            <h3>硬件扩展插件</h3>
+            <p>社区贡献的扩展板驱动，可直接安装并在 IDE 中启用。</p>
+          </article>
+        </div>
+      </section>
+
+      <footer>
+        <span>© 2024 PicoStudio. All rights reserved.</span>
+        <div class="toggle-theme">
+          <button class="active" type="button">浅色</button>
+          <button type="button">深色</button>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      const lightBtn = document.querySelector('.toggle-theme button:first-child');
+      const darkBtn = document.querySelector('.toggle-theme button:last-child');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (prefersDark) {
+        document.body.classList.add('dark');
+        lightBtn.classList.remove('active');
+        darkBtn.classList.add('active');
+      }
+      lightBtn.addEventListener('click', () => {
+        document.body.classList.remove('dark');
+        lightBtn.classList.add('active');
+        darkBtn.classList.remove('active');
+      });
+      darkBtn.addEventListener('click', () => {
+        document.body.classList.add('dark');
+        darkBtn.classList.add('active');
+        lightBtn.classList.remove('active');
+      });
+    </script>
+  </body>
+</html>

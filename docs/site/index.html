@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RP2040 / RP2350 在线 IDE</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="navbar-inner">
+        <a class="brand" href="index.html">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="12" width="56" height="40" rx="12" fill="url(#paint0_linear)" />
+            <path d="M20 26h6l3 6 3-6h6l-6 12h-6l-6-12z" fill="white" />
+            <defs>
+              <linearGradient id="paint0_linear" x1="10" y1="8" x2="54" y2="56" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#3B82F6" />
+                <stop offset="1" stop-color="#2563EB" />
+              </linearGradient>
+            </defs>
+          </svg>
+          PicoStudio
+        </a>
+        <nav class="nav-links">
+          <a href="index.html" class="active">平台首页</a>
+          <a href="workspace.html">在线 IDE</a>
+          <a href="modules.html">扩展与模块</a>
+          <a href="roadmap.html">路线图</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="hero">
+        <div>
+          <div class="badge">树莓派 RP2040 / RP2350 专属开发平台</div>
+          <h1>一个面向创客与教育的全功能在线 IDE</h1>
+          <p>
+            支持 Stepico、12 指神探、带屏 12 指神探、RP2040 游戏机以及 RP2350 核心板。集成 MicroPython
+            / Thonny 兼容运行时、Scratch 风格图形化编程与 AI 助手，帮助你快速构建下一代创意作品。
+          </p>
+          <div class="cta">
+            <a class="button primary" href="workspace.html">立即进入 IDE</a>
+            <a class="button secondary" href="modules.html">查看扩展生态</a>
+          </div>
+          <div class="tag-list">
+            <span class="chip">USB-C 即插即用</span>
+            <span class="chip">AI 代码优化</span>
+            <span class="chip">一键刷写</span>
+            <span class="chip">图形化 + 代码模式</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <span class="status">RP2350A · 已连接</span>
+          <pre><code>from pico import led, button
+
+@ai.optimize
+async def breathing_led(speed=0.8):
+    for brightness in range(0, 256):
+        await led.fade(brightness, speed)
+        if button.is_pressed():
+            return "Button interrupt"
+
+await breathing_led()</code></pre>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">平台亮点</h2>
+        <div class="grid">
+          <article class="card">
+            <div class="icon-circle">⚡</div>
+            <h3>一体化开发体验</h3>
+            <p>
+              支持 MicroPython 代码编辑、项目管理、串口日志、固件刷写与文件系统浏览，界面风格对齐 Thonny，便于用户迁移。
+            </p>
+          </article>
+          <article class="card">
+            <div class="icon-circle">🧠</div>
+            <h3>AI 助手全程助力</h3>
+            <p>
+              AI 负责语法检查、代码对齐、自动注释与性能优化，同时可一键生成 RP2040 / RP2350 的驱动模块与示例代码。
+            </p>
+          </article>
+          <article class="card">
+            <div class="icon-circle">🧩</div>
+            <h3>图形化 + 代码双模</h3>
+            <p>
+              Scratch 式拼图拖拽生成 MicroPython，可随时切换查看底层代码；适合课堂教学与新手入门。
+            </p>
+          </article>
+          <article class="card">
+            <div class="icon-circle">🔌</div>
+            <h3>USB-C 即插即用</h3>
+            <p>免驱连接，无需额外配置。自动识别硬件型号与可用模块，提供硬件仪表板。</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">支持的硬件</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>设备</th>
+              <th>处理器</th>
+              <th>特色功能</th>
+              <th>支持状态</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Stepico</td>
+              <td>RP2040</td>
+              <td>双核 133MHz，丰富 GPIO，教育配件</td>
+              <td>✅ 即插即用</td>
+            </tr>
+            <tr>
+              <td>12 指神探</td>
+              <td>RP2040</td>
+              <td>开放式扩展板，支持传感器矩阵</td>
+              <td>✅ 即插即用</td>
+            </tr>
+            <tr>
+              <td>带屏 12 指神探</td>
+              <td>RP2040</td>
+              <td>集成彩屏与音频，适合可视化项目</td>
+              <td>✅ 即插即用</td>
+            </tr>
+            <tr>
+              <td>RP2040 游戏机</td>
+              <td>RP2040</td>
+              <td>方向键、摇杆与扬声器，内置游戏模板</td>
+              <td>✅ 即插即用</td>
+            </tr>
+            <tr>
+              <td>RP2350 核心板</td>
+              <td>RP2350A / RP2350B</td>
+              <td>RISC-V + Cortex-M33 双核，安全加密支持</td>
+              <td>🚀 Beta 测试</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2 class="section-title">快速上手三步走</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>1. 连接你的开发板</h3>
+            <p>通过 USB-C 插入设备，浏览器会自动检测，并提示授权串口访问权限。</p>
+          </div>
+          <div class="timeline-item">
+            <h3>2. 选择编程模式</h3>
+            <p>在 MicroPython 编辑器或图形化编程模式之间切换，导入示例或创建新项目。</p>
+          </div>
+          <div class="timeline-item">
+            <h3>3. 与 AI 合作发布作品</h3>
+            <p>让 AI 优化代码、生成注释或扩展模块，点击“部署到设备”即可运行。</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">与传统方案对比</h2>
+        <div class="feature-columns">
+          <div>
+            <h3>参考平台</h3>
+            <p>我们借鉴了 Thonny 与 BIPES、M5Stack Block Designer 的优秀实践，并进一步增强：</p>
+            <ul>
+              <li><strong>更强的硬件适配：</strong>自动识别 RP2040 / RP2350 板卡与固件。</li>
+              <li><strong>AI 深度集成：</strong>不仅回答问题，更能生成项目骨架。</li>
+              <li><strong>课堂模式：</strong>讲师可同步学员进度并批改作业。</li>
+            </ul>
+          </div>
+          <div>
+            <h3>一站式创客平台</h3>
+            <ul>
+              <li>
+                <div class="icon-circle">🗂️</div>
+                <div>
+                  <strong>项目空间：</strong>管理课程、示例、项目模板与资源文件。
+                </div>
+              </li>
+              <li>
+                <div class="icon-circle">🔄</div>
+                <div>
+                  <strong>云端同步：</strong>自动保存到云端，并支持离线模式，网络恢复后自动合并。
+                </div>
+              </li>
+              <li>
+                <div class="icon-circle">📊</div>
+                <div>
+                  <strong>课堂仪表板：</strong>实时查看学员设备在线状态与编程进度。
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <span>© 2024 PicoStudio. All rights reserved.</span>
+        <div class="toggle-theme">
+          <button class="active" type="button">浅色</button>
+          <button type="button">深色</button>
+        </div>
+      </footer>
+    </main>
+    <script>
+      const lightBtn = document.querySelector('.toggle-theme button:first-child');
+      const darkBtn = document.querySelector('.toggle-theme button:last-child');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (prefersDark) {
+        document.body.classList.add('dark');
+        lightBtn.classList.remove('active');
+        darkBtn.classList.add('active');
+      }
+      lightBtn.addEventListener('click', () => {
+        document.body.classList.remove('dark');
+        lightBtn.classList.add('active');
+        darkBtn.classList.remove('active');
+      });
+      darkBtn.addEventListener('click', () => {
+        document.body.classList.add('dark');
+        darkBtn.classList.add('active');
+        lightBtn.classList.remove('active');
+      });
+    </script>
+  </body>
+</html>
