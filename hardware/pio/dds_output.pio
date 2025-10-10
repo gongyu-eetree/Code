@@ -1,0 +1,29 @@
+.program dds_output
+
+% c-sdk {
+#include "hardware/pio.h"
+#include "hardware/gpio.h"
+#include "hardware/clocks.h"
+
+static inline void dds_output_program_init(PIO pio, uint sm, uint offset, uint pin_base, float sample_rate_hz) {
+    pio_sm_config c = dds_output_program_get_default_config(offset);
+    sm_config_set_out_pins(&c, pin_base, 12);
+    sm_config_set_out_shift(&c, false, true, 16);
+    sm_config_set_fifo_join(&c, PIO_FIFO_JOIN_NONE);
+
+    float div = (float)clock_get_hz(clk_sys) / sample_rate_hz;
+    if (div < 1.0f) {
+        div = 1.0f;
+    }
+    sm_config_set_clkdiv(&c, div);
+    sm_config_set_wrap(&c, offset + dds_output_wrap_target, offset + dds_output_wrap);
+
+    pio_sm_init(pio, sm, offset, &c);
+    pio_sm_set_consecutive_pindirs(pio, sm, pin_base, 12, true);
+}
+%}
+
+.wrap_target
+    pull block
+    out pins, 12
+.wrap

@@ -1,0 +1,29 @@
+.program adc_capture
+
+.side_set 1 opt
+
+% c-sdk {
+#include "hardware/pio.h"
+#include "hardware/gpio.h"
+#include "hardware/clocks.h"
+
+static inline void adc_capture_program_init(PIO pio, uint sm, uint offset, uint pin_base, uint clk_pin, bool ddr_mode, float clkdiv) {
+    (void)ddr_mode; // DDR sampling can be added by extending the PIO program.
+    pio_sm_config c = adc_capture_program_get_default_config(offset);
+    sm_config_set_in_pins(&c, pin_base);
+    sm_config_set_in_shift(&c, true, true, 16);
+    sm_config_set_fifo_join(&c, PIO_FIFO_JOIN_NONE);
+    sm_config_set_clkdiv(&c, clkdiv);
+    sm_config_set_wrap(&c, offset + adc_capture_wrap_target, offset + adc_capture_wrap);
+
+    pio_sm_init(pio, sm, offset, &c);
+    pio_sm_set_consecutive_pindirs(pio, sm, pin_base, 8, false);
+    gpio_set_function(clk_pin, GPIO_FUNC_PIO0 + pio_get_index(pio));
+}
+%}
+
+.wrap_target
+    in pins, 8 side 0
+    in pins, 8 side 0
+    push block
+.wrap
