@@ -1,0 +1,648 @@
+[
+  {
+    "id": "amd-artix-7-35t",
+    "vendor": "AMD",
+    "family": "Artix-7",
+    "part_number": "XC7A35T-1CPG236C",
+    "device_type": "FPGA",
+    "logic_cells": 33280,
+    "luts": 20800,
+    "ffs": 41600,
+    "bram_kb": 1800,
+    "uram_kb": 0,
+    "dsp_blocks": 90,
+    "transceiver_channels": 0,
+    "transceiver_max_rate_gbps": 0,
+    "pcie_support": null,
+    "ddr_support": [
+      "DDR3"
+    ],
+    "mipi_support": false,
+    "hard_cpu": false,
+    "gpio_count": 210,
+    "lvds_pairs": 24,
+    "package_options": [
+      "CPG236"
+    ],
+    "temp_grades": [
+      "commercial",
+      "industrial"
+    ],
+    "power_profile": "low",
+    "toolchain": [
+      "Vivado"
+    ],
+    "lifecycle_status": "mature",
+    "price_band": "low",
+    "availability_score": 8,
+    "community_score": 9,
+    "board_maturity_score": 10,
+    "board_complexity": "low",
+    "recommended_for": [
+      "education",
+      "industrial",
+      "general_io"
+    ],
+    "not_recommended_for": [
+      "pcie",
+      "linux",
+      "serdes_heavy"
+    ]
+  },
+  {
+    "id": "amd-zynq-7010",
+    "vendor": "AMD",
+    "family": "Zynq-7000",
+    "part_number": "XC7Z010-1CLG400I",
+    "device_type": "SoC FPGA",
+    "logic_cells": 28000,
+    "luts": 17600,
+    "ffs": 35200,
+    "bram_kb": 2400,
+    "uram_kb": 0,
+    "dsp_blocks": 80,
+    "transceiver_channels": 0,
+    "transceiver_max_rate_gbps": 0,
+    "pcie_support": null,
+    "ddr_support": [
+      "DDR3",
+      "DDR3L"
+    ],
+    "mipi_support": false,
+    "hard_cpu": true,
+    "gpio_count": 180,
+    "lvds_pairs": 20,
+    "package_options": [
+      "CLG400"
+    ],
+    "temp_grades": [
+      "commercial",
+      "industrial"
+    ],
+    "power_profile": "medium",
+    "toolchain": [
+      "Vivado",
+      "PetaLinux"
+    ],
+    "lifecycle_status": "mature",
+    "price_band": "mid",
+    "availability_score": 8,
+    "community_score": 9,
+    "board_maturity_score": 9,
+    "board_complexity": "medium",
+    "recommended_for": [
+      "linux",
+      "gateway",
+      "education",
+      "industrial"
+    ],
+    "not_recommended_for": [
+      "ultra_low_power",
+      "high_speed_serdes"
+    ]
+  },
+  {
+    "id": "amd-zynqmp-zu3eg",
+    "vendor": "AMD",
+    "family": "Zynq UltraScale+",
+    "part_number": "XCZU3EG-1SFVC784I",
+    "device_type": "SoC FPGA",
+    "logic_cells": 154000,
+    "luts": 70500,
+    "ffs": 141000,
+    "bram_kb": 7600,
+    "uram_kb": 0,
+    "dsp_blocks": 360,
+    "transceiver_channels": 4,
+    "transceiver_max_rate_gbps": 6,
+    "pcie_support": "Gen2 x4",
+    "ddr_support": [
+      "DDR4",
+      "LPDDR4"
+    ],
+    "mipi_support": true,
+    "hard_cpu": true,
+    "gpio_count": 220,
+    "lvds_pairs": 28,
+    "package_options": [
+      "SFVC784"
+    ],
+    "temp_grades": [
+      "industrial"
+    ],
+    "power_profile": "medium",
+    "toolchain": [
+      "Vivado",
+      "Vitis",
+      "PetaLinux"
+    ],
+    "lifecycle_status": "active",
+    "price_band": "high",
+    "availability_score": 7,
+    "community_score": 8,
+    "board_maturity_score": 8,
+    "board_complexity": "high",
+    "recommended_for": [
+      "linux",
+      "vision",
+      "edge_ai",
+      "gateway"
+    ],
+    "not_recommended_for": [
+      "budget_sensitive",
+      "entry_education"
+    ]
+  },
+  {
+    "id": "amd-kintex-ultrascale-ku040",
+    "vendor": "AMD",
+    "family": "Kintex UltraScale",
+    "part_number": "XCKU040-2FFVA1156I",
+    "device_type": "FPGA",
+    "logic_cells": 242000,
+    "luts": 138000,
+    "ffs": 276000,
+    "bram_kb": 21600,
+    "uram_kb": 0,
+    "dsp_blocks": 1920,
+    "transceiver_channels": 16,
+    "transceiver_max_rate_gbps": 16.3,
+    "pcie_support": "Gen3 x8",
+    "ddr_support": [
+      "DDR4"
+    ],
+    "mipi_support": false,
+    "hard_cpu": false,
+    "gpio_count": 520,
+    "lvds_pairs": 64,
+    "package_options": [
+      "FFVA1156"
+    ],
+    "temp_grades": [
+      "industrial"
+    ],
+    "power_profile": "high",
+    "toolchain": [
+      "Vivado"
+    ],
+    "lifecycle_status": "active",
+    "price_band": "high",
+    "availability_score": 6,
+    "community_score": 7,
+    "board_maturity_score": 7,
+    "board_complexity": "high",
+    "recommended_for": [
+      "pcie",
+      "data_acquisition",
+      "high_speed_connectivity"
+    ],
+    "not_recommended_for": [
+      "education",
+      "low_power",
+      "budget_sensitive"
+    ]
+  },
+  {
+    "id": "intel-cyclone-10-lp",
+    "vendor": "Intel",
+    "family": "Cyclone 10 LP",
+    "part_number": "10CL025YU256I7G",
+    "device_type": "Low Power FPGA",
+    "logic_cells": 24624,
+    "luts": 16000,
+    "ffs": 32000,
+    "bram_kb": 1400,
+    "uram_kb": 0,
+    "dsp_blocks": 66,
+    "transceiver_channels": 0,
+    "transceiver_max_rate_gbps": 0,
+    "pcie_support": null,
+    "ddr_support": [
+      "DDR3"
+    ],
+    "mipi_support": false,
+    "hard_cpu": false,
+    "gpio_count": 220,
+    "lvds_pairs": 30,
+    "package_options": [
+      "U256"
+    ],
+    "temp_grades": [
+      "industrial"
+    ],
+    "power_profile": "low",
+    "toolchain": [
+      "Quartus Prime"
+    ],
+    "lifecycle_status": "active",
+    "price_band": "low",
+    "availability_score": 8,
+    "community_score": 7,
+    "board_maturity_score": 7,
+    "board_complexity": "low",
+    "recommended_for": [
+      "education",
+      "industrial",
+      "general_io",
+      "cost_optimized"
+    ],
+    "not_recommended_for": [
+      "pcie",
+      "linux",
+      "mipi_bridge"
+    ]
+  },
+  {
+    "id": "intel-cyclone-v-soc",
+    "vendor": "Intel",
+    "family": "Cyclone V SoC",
+    "part_number": "5CSEBA6U23I7",
+    "device_type": "SoC FPGA",
+    "logic_cells": 110000,
+    "luts": 56000,
+    "ffs": 112000,
+    "bram_kb": 5530,
+    "uram_kb": 0,
+    "dsp_blocks": 224,
+    "transceiver_channels": 0,
+    "transceiver_max_rate_gbps": 0,
+    "pcie_support": null,
+    "ddr_support": [
+      "DDR3"
+    ],
+    "mipi_support": false,
+    "hard_cpu": true,
+    "gpio_count": 340,
+    "lvds_pairs": 40,
+    "package_options": [
+      "U23"
+    ],
+    "temp_grades": [
+      "industrial"
+    ],
+    "power_profile": "medium",
+    "toolchain": [
+      "Quartus Prime"
+    ],
+    "lifecycle_status": "mature",
+    "price_band": "mid",
+    "availability_score": 7,
+    "community_score": 9,
+    "board_maturity_score": 9,
+    "board_complexity": "medium",
+    "recommended_for": [
+      "linux",
+      "education",
+      "gateway",
+      "control"
+    ],
+    "not_recommended_for": [
+      "pcie_gen3",
+      "ultra_low_power"
+    ]
+  },
+  {
+    "id": "intel-agilex-7-f",
+    "vendor": "Intel",
+    "family": "Agilex 7",
+    "part_number": "AGFB014R24B2E2V",
+    "device_type": "FPGA",
+    "logic_cells": 614000,
+    "luts": 320000,
+    "ffs": 640000,
+    "bram_kb": 53200,
+    "uram_kb": 0,
+    "dsp_blocks": 3680,
+    "transceiver_channels": 24,
+    "transceiver_max_rate_gbps": 28.9,
+    "pcie_support": "Gen4 x8",
+    "ddr_support": [
+      "DDR4",
+      "LPDDR4"
+    ],
+    "mipi_support": false,
+    "hard_cpu": false,
+    "gpio_count": 640,
+    "lvds_pairs": 72,
+    "package_options": [
+      "R24"
+    ],
+    "temp_grades": [
+      "commercial"
+    ],
+    "power_profile": "high",
+    "toolchain": [
+      "Quartus Prime Pro"
+    ],
+    "lifecycle_status": "new",
+    "price_band": "high",
+    "availability_score": 5,
+    "community_score": 6,
+    "board_maturity_score": 6,
+    "board_complexity": "high",
+    "recommended_for": [
+      "pcie",
+      "high_speed_connectivity",
+      "data_acquisition"
+    ],
+    "not_recommended_for": [
+      "education",
+      "budget_sensitive",
+      "low_power"
+    ]
+  },
+  {
+    "id": "lattice-crosslink-nx-17",
+    "vendor": "Lattice",
+    "family": "CrossLink-NX",
+    "part_number": "LIFCL-17-8SG72CES",
+    "device_type": "Low Power FPGA",
+    "logic_cells": 17000,
+    "luts": 17000,
+    "ffs": 18000,
+    "bram_kb": 824,
+    "uram_kb": 0,
+    "dsp_blocks": 56,
+    "transceiver_channels": 0,
+    "transceiver_max_rate_gbps": 0,
+    "pcie_support": null,
+    "ddr_support": [],
+    "mipi_support": true,
+    "hard_cpu": false,
+    "gpio_count": 150,
+    "lvds_pairs": 12,
+    "package_options": [
+      "SG72"
+    ],
+    "temp_grades": [
+      "industrial"
+    ],
+    "power_profile": "ultra_low",
+    "toolchain": [
+      "Lattice Radiant"
+    ],
+    "lifecycle_status": "active",
+    "price_band": "mid",
+    "availability_score": 7,
+    "community_score": 7,
+    "board_maturity_score": 8,
+    "board_complexity": "medium",
+    "recommended_for": [
+      "vision",
+      "mipi_bridge",
+      "low_power_edge_ai"
+    ],
+    "not_recommended_for": [
+      "pcie",
+      "linux",
+      "high_logic_density"
+    ]
+  },
+  {
+    "id": "lattice-ecp5-45",
+    "vendor": "Lattice",
+    "family": "ECP5",
+    "part_number": "LFE5U-45F-6BG381I",
+    "device_type": "FPGA",
+    "logic_cells": 44000,
+    "luts": 44000,
+    "ffs": 44000,
+    "bram_kb": 2088,
+    "uram_kb": 0,
+    "dsp_blocks": 156,
+    "transceiver_channels": 4,
+    "transceiver_max_rate_gbps": 3.2,
+    "pcie_support": "Soft Gen2 x1",
+    "ddr_support": [
+      "DDR3"
+    ],
+    "mipi_support": false,
+    "hard_cpu": false,
+    "gpio_count": 240,
+    "lvds_pairs": 24,
+    "package_options": [
+      "BG381"
+    ],
+    "temp_grades": [
+      "industrial"
+    ],
+    "power_profile": "low",
+    "toolchain": [
+      "Lattice Diamond",
+      "open-source"
+    ],
+    "lifecycle_status": "active",
+    "price_band": "mid",
+    "availability_score": 8,
+    "community_score": 8,
+    "board_maturity_score": 8,
+    "board_complexity": "medium",
+    "recommended_for": [
+      "education",
+      "industrial",
+      "cost_optimized",
+      "connectivity"
+    ],
+    "not_recommended_for": [
+      "linux_hard_cpu",
+      "gen3_pcie"
+    ]
+  },
+  {
+    "id": "microchip-polarfire-soc-mpfs250t",
+    "vendor": "Microchip",
+    "family": "PolarFire SoC",
+    "part_number": "MPFS250T-FCVG484I",
+    "device_type": "SoC FPGA",
+    "logic_cells": 254000,
+    "luts": 95000,
+    "ffs": 190000,
+    "bram_kb": 7200,
+    "uram_kb": 0,
+    "dsp_blocks": 784,
+    "transceiver_channels": 8,
+    "transceiver_max_rate_gbps": 12.7,
+    "pcie_support": "Gen2 x4",
+    "ddr_support": [
+      "DDR4"
+    ],
+    "mipi_support": false,
+    "hard_cpu": true,
+    "gpio_count": 300,
+    "lvds_pairs": 34,
+    "package_options": [
+      "FCVG484"
+    ],
+    "temp_grades": [
+      "industrial"
+    ],
+    "power_profile": "medium",
+    "toolchain": [
+      "Libero SoC"
+    ],
+    "lifecycle_status": "active",
+    "price_band": "high",
+    "availability_score": 8,
+    "community_score": 6,
+    "board_maturity_score": 8,
+    "board_complexity": "high",
+    "recommended_for": [
+      "linux",
+      "industrial",
+      "gateway",
+      "long_lifecycle"
+    ],
+    "not_recommended_for": [
+      "entry_education",
+      "low_budget"
+    ]
+  },
+  {
+    "id": "microchip-polarfire-mpfa100t",
+    "vendor": "Microchip",
+    "family": "PolarFire",
+    "part_number": "MPFA100T-FCG484I",
+    "device_type": "FPGA",
+    "logic_cells": 109000,
+    "luts": 60000,
+    "ffs": 120000,
+    "bram_kb": 4800,
+    "uram_kb": 0,
+    "dsp_blocks": 300,
+    "transceiver_channels": 8,
+    "transceiver_max_rate_gbps": 12.7,
+    "pcie_support": "Gen2 x4",
+    "ddr_support": [
+      "DDR4"
+    ],
+    "mipi_support": false,
+    "hard_cpu": false,
+    "gpio_count": 284,
+    "lvds_pairs": 32,
+    "package_options": [
+      "FCG484"
+    ],
+    "temp_grades": [
+      "industrial"
+    ],
+    "power_profile": "low",
+    "toolchain": [
+      "Libero SoC"
+    ],
+    "lifecycle_status": "active",
+    "price_band": "high",
+    "availability_score": 8,
+    "community_score": 6,
+    "board_maturity_score": 7,
+    "board_complexity": "high",
+    "recommended_for": [
+      "industrial",
+      "data_acquisition",
+      "low_power_high_speed"
+    ],
+    "not_recommended_for": [
+      "education",
+      "budget_sensitive"
+    ]
+  },
+  {
+    "id": "efinix-titanium-ti60",
+    "vendor": "Efinix",
+    "family": "Titanium",
+    "part_number": "T60F225C4",
+    "device_type": "FPGA",
+    "logic_cells": 62700,
+    "luts": 62700,
+    "ffs": 85000,
+    "bram_kb": 4320,
+    "uram_kb": 0,
+    "dsp_blocks": 184,
+    "transceiver_channels": 4,
+    "transceiver_max_rate_gbps": 3.125,
+    "pcie_support": "Soft Gen2 x1",
+    "ddr_support": [
+      "LPDDR4",
+      "DDR4"
+    ],
+    "mipi_support": true,
+    "hard_cpu": false,
+    "gpio_count": 220,
+    "lvds_pairs": 18,
+    "package_options": [
+      "F225"
+    ],
+    "temp_grades": [
+      "commercial",
+      "industrial"
+    ],
+    "power_profile": "low",
+    "toolchain": [
+      "Efinity"
+    ],
+    "lifecycle_status": "active",
+    "price_band": "mid",
+    "availability_score": 6,
+    "community_score": 5,
+    "board_maturity_score": 6,
+    "board_complexity": "medium",
+    "recommended_for": [
+      "edge_ai",
+      "vision",
+      "cost_optimized"
+    ],
+    "not_recommended_for": [
+      "maximum_ecosystem",
+      "gen3_pcie"
+    ]
+  },
+  {
+    "id": "gowin-gw2ar-18",
+    "vendor": "Gowin",
+    "family": "Arora V",
+    "part_number": "GW2AR-LV18QN88C8/I7",
+    "device_type": "Low Power FPGA",
+    "logic_cells": 18000,
+    "luts": 18000,
+    "ffs": 22000,
+    "bram_kb": 720,
+    "uram_kb": 0,
+    "dsp_blocks": 64,
+    "transceiver_channels": 0,
+    "transceiver_max_rate_gbps": 0,
+    "pcie_support": null,
+    "ddr_support": [
+      "DDR3"
+    ],
+    "mipi_support": false,
+    "hard_cpu": false,
+    "gpio_count": 140,
+    "lvds_pairs": 10,
+    "package_options": [
+      "QN88"
+    ],
+    "temp_grades": [
+      "commercial",
+      "industrial"
+    ],
+    "power_profile": "low",
+    "toolchain": [
+      "Gowin EDA"
+    ],
+    "lifecycle_status": "active",
+    "price_band": "low",
+    "availability_score": 6,
+    "community_score": 5,
+    "board_maturity_score": 7,
+    "board_complexity": "low",
+    "recommended_for": [
+      "education",
+      "cost_optimized",
+      "simple_control"
+    ],
+    "not_recommended_for": [
+      "pcie",
+      "linux",
+      "mipi_bridge"
+    ]
+  }
+]
