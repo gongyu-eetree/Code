@@ -1,0 +1,146 @@
+[
+  {
+    "id": "digilent-cmod-a7",
+    "name": "Digilent Cmod A7",
+    "vendor": "Digilent",
+    "device_ids": [
+      "amd-artix-7-35t"
+    ],
+    "stage_focus": [
+      "prototype"
+    ],
+    "summary": "Mature education board for basic RTL, IO labs, and entry teaching.",
+    "price_band": "low",
+    "maturity_score": 9
+  },
+  {
+    "id": "qmtech-zynq-7010",
+    "name": "QMTech Zynq-7010 SoM",
+    "vendor": "QMTech",
+    "device_ids": [
+      "amd-zynq-7010"
+    ],
+    "stage_focus": [
+      "prototype",
+      "production"
+    ],
+    "summary": "Low-cost Linux-capable SoC module for gateway and control prototypes.",
+    "price_band": "mid",
+    "maturity_score": 7
+  },
+  {
+    "id": "trenz-te0725",
+    "name": "Trenz TE0725",
+    "vendor": "Trenz",
+    "device_ids": [
+      "amd-zynqmp-zu3eg"
+    ],
+    "stage_focus": [
+      "prototype",
+      "production"
+    ],
+    "summary": "Industrial-friendly MPSoC module for Linux gateways and vision edge nodes.",
+    "price_band": "high",
+    "maturity_score": 8
+  },
+  {
+    "id": "terasic-de10-nano",
+    "name": "Terasic DE10-Nano",
+    "vendor": "Terasic",
+    "device_ids": [
+      "intel-cyclone-v-soc"
+    ],
+    "stage_focus": [
+      "prototype"
+    ],
+    "summary": "Popular education and embedded Linux SoC FPGA board with large community.",
+    "price_band": "mid",
+    "maturity_score": 9
+  },
+  {
+    "id": "enclustra-mercury-xu5",
+    "name": "Enclustra Mercury XU5",
+    "vendor": "Enclustra",
+    "device_ids": [
+      "amd-kintex-ultrascale-ku040"
+    ],
+    "stage_focus": [
+      "prototype",
+      "production"
+    ],
+    "summary": "High-speed mezzanine platform suited for PCIe and interface-heavy work.",
+    "price_band": "high",
+    "maturity_score": 8
+  },
+  {
+    "id": "lattice-crosslink-nx-evn",
+    "name": "CrossLink-NX Evaluation Board",
+    "vendor": "Lattice",
+    "device_ids": [
+      "lattice-crosslink-nx-17"
+    ],
+    "stage_focus": [
+      "prototype"
+    ],
+    "summary": "Vision bridge evaluation kit for MIPI and low-power camera aggregation.",
+    "price_band": "mid",
+    "maturity_score": 8
+  },
+  {
+    "id": "microchip-polarfire-icicle",
+    "name": "PolarFire Icicle Kit",
+    "vendor": "Microchip",
+    "device_ids": [
+      "microchip-polarfire-soc-mpfs250t"
+    ],
+    "stage_focus": [
+      "prototype",
+      "production"
+    ],
+    "summary": "Long-lifecycle Linux SoC kit with industrial and security-oriented ecosystem.",
+    "price_band": "high",
+    "maturity_score": 8
+  },
+  {
+    "id": "efinix-titanium-ti60",
+    "name": "Efinix Titanium Ti60 F225 Dev Kit",
+    "vendor": "Efinix",
+    "device_ids": [
+      "efinix-titanium-ti60"
+    ],
+    "stage_focus": [
+      "prototype"
+    ],
+    "summary": "Compact low-power platform for edge AI and sensor processing exploration.",
+    "price_band": "mid",
+    "maturity_score": 6
+  },
+  {
+    "id": "gowin-tang-nano-20k",
+    "name": "Sipeed Tang Nano 20K",
+    "vendor": "Sipeed",
+    "device_ids": [
+      "gowin-gw2ar-18"
+    ],
+    "stage_focus": [
+      "prototype"
+    ],
+    "summary": "Very low-cost board for teaching and small control projects.",
+    "price_band": "low",
+    "maturity_score": 7
+  },
+  {
+    "id": "intel-agilex-devkit",
+    "name": "Intel Agilex Development Kit",
+    "vendor": "Intel",
+    "device_ids": [
+      "intel-agilex-7-f"
+    ],
+    "stage_focus": [
+      "prototype"
+    ],
+    "summary": "Premium platform for PCIe Gen4-class and transceiver-heavy prototyping.",
+    "price_band": "high",
+    "maturity_score": 7
+  }
+]

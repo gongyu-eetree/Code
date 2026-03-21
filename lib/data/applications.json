@@ -1,0 +1,196 @@
+[
+  {
+    "id": "education_entry",
+    "title": "Education Entry",
+    "description": "Low-cost teaching, labs, and first FPGA bring-up with mature boards and tooling.",
+    "defaultWeights": {
+      "ApplicationFit": 0.2,
+      "ResourceFit": 0.1,
+      "InterfaceFit": 0.05,
+      "ToolchainFit": 0.15,
+      "BoardFeasibility": 0.25,
+      "CostFit": 0.15,
+      "SupplyLifecycleFit": 0.05,
+      "CommunityFit": 0.05
+    },
+    "preferredTraits": [
+      "education",
+      "board_maturity",
+      "low_cost",
+      "community"
+    ],
+    "avoidedTraits": [
+      "serdes_heavy",
+      "high_complexity"
+    ]
+  },
+  {
+    "id": "embedded_vision_bridge",
+    "title": "Embedded Vision Bridge",
+    "description": "MIPI/LVDS camera bridging, ISP glue logic, and compact low-power video interface designs.",
+    "defaultWeights": {
+      "ApplicationFit": 0.3,
+      "ResourceFit": 0.15,
+      "InterfaceFit": 0.25,
+      "ToolchainFit": 0.05,
+      "BoardFeasibility": 0.1,
+      "CostFit": 0.05,
+      "SupplyLifecycleFit": 0.05,
+      "CommunityFit": 0.05
+    },
+    "preferredTraits": [
+      "vision",
+      "mipi",
+      "low_power",
+      "small_package"
+    ],
+    "avoidedTraits": [
+      "high_power",
+      "oversized"
+    ]
+  },
+  {
+    "id": "industrial_control",
+    "title": "Industrial Control",
+    "description": "Motor control, PLC auxiliaries, deterministic IO, and long-lifecycle industrial automation.",
+    "defaultWeights": {
+      "ApplicationFit": 0.28,
+      "ResourceFit": 0.17,
+      "InterfaceFit": 0.1,
+      "ToolchainFit": 0.08,
+      "BoardFeasibility": 0.1,
+      "CostFit": 0.07,
+      "SupplyLifecycleFit": 0.15,
+      "CommunityFit": 0.05
+    },
+    "preferredTraits": [
+      "industrial",
+      "low_power",
+      "longevity",
+      "io_rich"
+    ],
+    "avoidedTraits": [
+      "bleeding_edge",
+      "consumer_only"
+    ]
+  },
+  {
+    "id": "pcie_data_acquisition",
+    "title": "PCIe Data Acquisition",
+    "description": "High-throughput capture cards needing PCIe, DDR buffering, and often transceivers.",
+    "defaultWeights": {
+      "ApplicationFit": 0.28,
+      "ResourceFit": 0.22,
+      "InterfaceFit": 0.22,
+      "ToolchainFit": 0.08,
+      "BoardFeasibility": 0.05,
+      "CostFit": 0.03,
+      "SupplyLifecycleFit": 0.07,
+      "CommunityFit": 0.05
+    },
+    "preferredTraits": [
+      "pcie",
+      "ddr",
+      "serdes",
+      "high_bandwidth"
+    ],
+    "avoidedTraits": [
+      "low_end",
+      "no_ddr"
+    ]
+  },
+  {
+    "id": "low_power_edge_ai",
+    "title": "Low Power Edge AI",
+    "description": "Sensor fusion and lightweight edge inference under power and thermal limits.",
+    "defaultWeights": {
+      "ApplicationFit": 0.32,
+      "ResourceFit": 0.2,
+      "InterfaceFit": 0.12,
+      "ToolchainFit": 0.08,
+      "BoardFeasibility": 0.1,
+      "CostFit": 0.08,
+      "SupplyLifecycleFit": 0.05,
+      "CommunityFit": 0.05
+    },
+    "preferredTraits": [
+      "edge_ai",
+      "low_power",
+      "dsp",
+      "mipi"
+    ],
+    "avoidedTraits": [
+      "high_power"
+    ]
+  },
+  {
+    "id": "linux_soc_gateway",
+    "title": "Linux SoC Gateway",
+    "description": "Embedded Linux gateways favoring hard CPUs, DDR, and mixed communication interfaces.",
+    "defaultWeights": {
+      "ApplicationFit": 0.3,
+      "ResourceFit": 0.15,
+      "InterfaceFit": 0.16,
+      "ToolchainFit": 0.1,
+      "BoardFeasibility": 0.08,
+      "CostFit": 0.05,
+      "SupplyLifecycleFit": 0.1,
+      "CommunityFit": 0.06
+    },
+    "preferredTraits": [
+      "linux",
+      "hard_cpu",
+      "ddr",
+      "ecosystem"
+    ],
+    "avoidedTraits": [
+      "soft_cpu_only"
+    ]
+  },
+  {
+    "id": "cost_optimized_general",
+    "title": "Cost Optimized General",
+    "description": "General-purpose control and interface logic where BOM and availability dominate.",
+    "defaultWeights": {
+      "ApplicationFit": 0.22,
+      "ResourceFit": 0.18,
+      "InterfaceFit": 0.1,
+      "ToolchainFit": 0.1,
+      "BoardFeasibility": 0.1,
+      "CostFit": 0.18,
+      "SupplyLifecycleFit": 0.07,
+      "CommunityFit": 0.05
+    },
+    "preferredTraits": [
+      "low_cost",
+      "available",
+      "moderate_io"
+    ],
+    "avoidedTraits": [
+      "premium_only"
+    ]
+  },
+  {
+    "id": "high_speed_connectivity",
+    "title": "High Speed Connectivity",
+    "description": "Bridging or packet processing using multi-gigabit serial links and high-speed IO.",
+    "defaultWeights": {
+      "ApplicationFit": 0.28,
+      "ResourceFit": 0.18,
+      "InterfaceFit": 0.24,
+      "ToolchainFit": 0.08,
+      "BoardFeasibility": 0.05,
+      "CostFit": 0.03,
+      "SupplyLifecycleFit": 0.07,
+      "CommunityFit": 0.07
+    },
+    "preferredTraits": [
+      "serdes",
+      "pcie",
+      "high_bandwidth"
+    ],
+    "avoidedTraits": [
+      "entry_level"
+    ]
+  }
+]
